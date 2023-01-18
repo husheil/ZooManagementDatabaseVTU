@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}
+Register
+{% endblock title %}
+{% block body %}
+<h1>Register as Employee or Customer</h1>
+<div class="container mt-5">
+    <div class ="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 jumbotron">
+        <h4 class="text-center">Registeration Page</h4>
+        <br>
+
+
+        {% with messages=get_flashed_messages(with_categories=true)%}
+        {% if messages %}
+        {% for category,message in messages  %}
+        <div class="alert alert-{{category}} alert-dismissible fade show"
+        role="alert">
+            {{message}}
+          <button type="button" class="close" data-dismiss="alert" aria-Label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        
+        <form action="/register" method="POST">
+    
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+    
+    
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+              </div>
+    
+              
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-success btn-sm btn-block">Register</button>
+          </form>
+          <br>
+          Already a User? <a href="/login">Log in</a>
+    </div>
+    <div class="col-md-4"></div>
+    </div>
+    </div>
+{% endblock body %}

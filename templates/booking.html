@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}
+book tickets
+{% endblock title %}
+{% block body %}
+
+
+
+<form action="/booking" method="POST" class="jumbotron">
+
+    <h1 class="display-2 text-center">BOOK TICKET</h1>
+    <br>
+    <br>
+
+
+    <div class="form-group">
+  
+      <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+    
+    </div>
+  
+    <div class="form-group">
+    
+      <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required>
+    
+    </div>
+  
+   <div class="form-group">
+  
+              
+                                        
+  <select class="form-control" id="gender" name="gender" placeholder="Gender" required>
+    
+          <option selected>Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Others">Others</option>
+   
+    </select>
+    <br>
+   
+   
+    <div class="form-group">
+      
+      <input type="date" class="form-control" name="date" placeholder="Date" required>
+    
+    </div>
+
+  
+    <div class="form-group">
+  
+      <input type="number" class="form-control" id="number" name="number" placeholder="Phone Number" required>
+    
+    </div>
+  
+    
+    <button type="submit" class="btn btn-info btn-sm btn-block">Book</button>
+  </form>
+  
+
+{% endblock body %}
